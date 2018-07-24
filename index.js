@@ -16,5 +16,11 @@ function fuzzyMatch(drivers, str) {
 }
 
 function matchName (drivers, str) {
-  return drivers.filter(function(driver) {return driver[name] === str } );
+  const matching_obj = [];
+  drivers.filter (function(driver) {
+    if (driver[name] === str) {
+    matching_obj.push(driver);
+    }
+  });
+  return matching_obj;
 }
