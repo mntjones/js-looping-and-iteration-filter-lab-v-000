@@ -4,7 +4,7 @@ function findMatching(drivers, str) {
   const matching = [];
   
   drivers.filter (function(driver) { 
-    if (driver.toLowerCase() === str){
+    if (driver.toLowerCase() === str.toLowerCase()){
       matching.push(driver);
       }
   });
