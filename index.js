@@ -1,12 +1,28 @@
 // Code your solution in this file
+
 function findMatching(drivers, str) {
-  drivers.filter (function(driver){return (driver === str || driver.toLowerCase() === str)});
+  const matching = [];
+  
+  drivers.filter (function(driver) { 
+    if (driver === str || driver.toLowerCase() === str){
+      matching.push(driver);
+      }
+  });
+  return matching;
 }
 
 function fuzzyMatch(drivers, str) {
-  drivers.filter (function(driver) {return driver.startsWith(str) });
+  return drivers.filter (function(driver) {return driver.startsWith(str) });
 }
 
 function matchName (drivers, str) {
-  drivers.filter(function(driver) {return driver.name === str } );
+  return drivers.filter(function(driver) {return driver.name === str } );
+}
+
+function matchName(drivers, matName) {
+    return drivers.filter(function(driverObj) {
+        for (const name in driverObj) {
+            return matName === driverObj[name]
+        }
+    })
 }
