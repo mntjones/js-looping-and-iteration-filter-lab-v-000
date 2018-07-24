@@ -16,13 +16,5 @@ function fuzzyMatch(drivers, str) {
 }
 
 function matchName (drivers, str) {
-  return drivers.filter(function(driver) {return driver.name === str } );
-}
-
-function matchName(drivers, matName) {
-    return drivers.filter(function(driverObj) {
-        for (const name in driverObj) {
-            return matName === driverObj[name]
-        }
-    })
+  return drivers.filter(function(driver) {return driver[name] === str } );
 }
